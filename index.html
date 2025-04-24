@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer with Background Color Picker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="image-container">
+            <img id="displayImage" src="drape.png" alt="Displayed Image">
+        </div>
+
+        <div class="controls">
+            <label for="bgColorPicker">Couleur de fond:</label>
+            <input type="color" id="bgColorPicker" value="#85dcdc"> <!-- Default color set to light gray -->
+            <span id="colorValueDisplay">#85dcdc</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
