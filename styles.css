@@ -1,0 +1,85 @@
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #f0f0f0; /* Initial background color (should match input default) */
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.container {
+    /*background-color: rgba(255, 255, 255, 0.8);*/ /* Slightly transparent white background for contrast */
+    padding: 30px;
+    border-radius: 8px;
+    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);*/
+    text-align: center;
+    max-width: 90%; /* Limit container width */
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Image Styling */
+.image-container {
+    margin-bottom: 100px; /* Space below image */
+}
+
+#displayImage {
+    max-width: 100%; /* Ensure image is responsive and doesn't overflow container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Helps with margin auto centering if needed */
+    margin-left: auto;
+    margin-right: auto;
+  /*  border: 1px solid #ddd;  Optional: subtle border around image */
+    /*background-color: #fff;*/ /* White background directly behind image if it has transparency */
+}
+
+/* Controls Styling */
+.controls {
+    margin-top: 80px;
+}
+
+.controls label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+#bgColorPicker {
+    width: 50px; /* Adjust size as needed */
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle; /* Align nicely with the label */
+}
+
+/* Optional: Style the color picker handle */
+#bgColorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+#bgColorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 4px;
+}
+#bgColorPicker::-moz-color-swatch {
+    border: none;
+    border-radius: 4px;
+}
+
+#colorValueDisplay {
+    display: block; /* Makes it appear on its own line below the picker */
+    margin-top: 10px; /* Adds some space above it */
+    font-family: monospace; /* Often good for hex codes */
+    font-size: 0.9em;
+    color: #555; /* A slightly muted color */
+    background-color: #f0f0f0;
+}
