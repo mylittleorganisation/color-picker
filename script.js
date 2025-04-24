@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function updateQueryString() {
         const selectedColor = colorPicker.value;
-        // Ensure the '#' is properly encoded for the URL
-        const encodedColor = encodeURIComponent(selectedColor);
-        const newUrl = `${window.location.pathname}?color=${encodedColor}`;
+        const colorWithoutHash = selectedColor.substring(1);;
+        const newUrl = `${window.location.pathname}?color=${colorWithoutHash}`;
         // Replace current history entry instead of adding a new one
         history.replaceState(null, '', newUrl);
     }
@@ -24,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const colorParam = urlParams.get('color');
         // Basic validation: check if it looks like a hex code
-        if (colorParam && /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(colorParam)) {
-            // Ensure it starts with # for the color picker input
-            return colorParam.startsWith('#') ? colorParam : '#' + colorParam;
+        if (colorParam && /^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/.test(colorParam)) {
+            // It's a valid 3 or 6 digit hex string (without #)
+            return '#' + colorParam; // Add '#' for internal use
         }
         return null;
     }
